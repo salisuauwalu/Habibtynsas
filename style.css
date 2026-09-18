@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffb6d5, #8b2f59, #210713);
+    color: white;
+    overflow: hidden;
+}
+
+/* Opening screen */
+#opening {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #d95788, #270914);
+    z-index: 100;
+}
+.opening-box {
+    width: 90%;
+    max-width: 380px;
+    padding: 35px 25px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.big-heart {
+    font-size: 65px;
+    animation: heartbeat 1.3s infinite;
+}
+@keyframes heartbeat {
+    50% { transform: scale(1.2); }
+}
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.opening-box p {
+    line-height: 1.6;
+    opacity: .9;
+}
+button {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    background: white;
+    color: #9b2858;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,.3);
+}
+
+/* Main page */
+#lovePage {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.card {
+    width: 100%;
+    max-width: 430px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 30px;
+    background: rgba(20,5,15,.55);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 70px rgba(0,0,0,.4);
+}
+.card h2 {
+    font-size: 28px;
+    margin: 0;
+}
+.from {
+    opacity: .8;
+    font-size: 14px;
+}
+.habibty-photo {
+    width: 190px;
+    height: 245px;
+    object-fit: cover;
+    border-radius: 100px 100px 25px 25px;
+    border: 4px solid white;
+    box-shadow: 0 0 35px #ffd1e5;
+    animation: floating 4s infinite ease-in-out;
+}
+@keyframes floating {
+    50% { transform: translateY(-8px); }
+}
+#message {
+    min-height: 120px;
+    margin: 20px 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px;
+    background: rgba(255,255,255,.12);
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+.pop {
+    animation: messagePop .8s ease;
+}
+@keyframes messagePop {
+    0% { opacity: 0; transform: scale(.7) translateY(20px); }
+    70% { transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+}
+.signature {
+    margin-top: 20px;
+    opacity: .9;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -40px;
+    pointer-events: none;
+    animation: rise 7s linear forwards;
+    z-index: 1;
+}
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
